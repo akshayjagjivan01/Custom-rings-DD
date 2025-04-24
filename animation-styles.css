@@ -1,0 +1,71 @@
+/* Add to your styles.css file */
+
+/* Base animation classes */
+.fade-in {
+    opacity: 0;
+}
+
+.animate-up {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.animate-from-left {
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+.animate-from-right {
+    opacity: 0;
+    transform: translateX(50px);
+}
+
+.animate-scale {
+    opacity: 0;
+    transform: scale(0.7);
+}
+
+.stagger-item {
+    opacity: 0;
+}
+
+/* Animation keyframes for additional effects */
+@keyframes shimmer {
+    0% { background-position: 100% 0; }
+    100% { background-position: -100% 0; }
+}
+
+.shimmer-effect {
+    background: linear-gradient(
+        90deg, 
+        rgba(255,255,255,0) 0%, 
+        rgba(255,255,255,0.2) 50%, 
+        rgba(255,255,255,0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+}
+
+/* Sparkle effect */
+.sparkle-container {
+    position: relative;
+}
+
+.sparkle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: white;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.timeline-item, .gallery-item, .section-content, .input-group {
+    animation: forceVisible 1s forwards;
+    animation-delay: 1s; /* Give time for normal animations to work first */
+}
+
+@keyframes forceVisible {
+    to { opacity: 1; }
+}

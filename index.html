@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diamond District - Custom Engagement Rings</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <!-- Particle canvas background -->
+    <canvas id="diamond-particles"></canvas>
+    
+    <!-- Header with logo and nav -->
+    <header>
+        <div class="logo">
+            <a href="https://diamonddistrictza.com/" class="logo-link">
+            <img src="https://diamonddistrictza.com/wp-content/uploads/2025/02/cropped-logoDD.png" alt="Diamond District Logo" class="logo-img">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#booking">Book Consultation</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="reveal-text">Where Dreams Become Diamonds</h1>
+            <p class="reveal-text">Exquisite custom engagement rings, handcrafted to perfection</p>
+            <a href="#contact" class="cta-button">Begin Your Journey</a>
+        </div>
+        <div class="diamond-showcase">
+            <div id="diamond-model-container"></div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="arrow">▼</div>
+        </div>
+    </section>
+
+    <!-- About section -->
+    <section id="about" class="about">
+        <div class="section-content">
+            <h2 class="section-title">Custom Engagement Rings</h2>
+            <div class="luxury-divider">
+                <span class="diamond-dot"></span>
+                <span class="line"></span>
+                <span class="diamond-dot"></span>
+            </div>
+            <div class="content-columns">
+                <div class="text-column">
+                    <p class="elegant-text">Let Diamond District forge the image in your imagination into a breathtaking work of art you can possess. From the spark of an idea to the flawlessly finished creation, our artisans utilize their mastery to sculpt your uniquely bespoke design, a testament to your individual essence.</p>
+                    <p class="elegant-text">Diamond District excels in translating your innermost desires into tangible perfection. We are only fulfilled when your expectations are surpassed.</p>
+                </div>
+                <div class="image-column">
+                    <div class="floating-image-container">
+                        <div class="floating-image">
+                            <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Custom engagement ring crafting process">
+                        </div>
+                        <div class="sparkle sparkle-1"></div>
+                        <div class="sparkle sparkle-2"></div>
+                        <div class="sparkle sparkle-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process section -->
+    <section id="process" class="process">
+        <div class="section-content">
+            <h2 class="section-title">Our Process</h2>
+            <div class="luxury-divider">
+                <span class="diamond-dot"></span>
+                <span class="line"></span>
+                <span class="diamond-dot"></span>
+            </div>
+            <div class="process-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-number">01</div>
+                    <h3>Consultation</h3>
+                    <p>Share your vision with our design specialists who will guide you through options and possibilities.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">02</div>
+                    <h3>Design</h3>
+                    <p>Our master designers create detailed sketches and 3D models of your perfect ring.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">03</div>
+                    <h3>Selection</h3>
+                    <p>Choose from our curated collection of ethically sourced diamonds and precious gems.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">04</div>
+                    <h3>Creation</h3>
+                    <p>Skilled artisans meticulously handcraft your ring with precision and passion.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">05</div>
+                    <h3>Perfection</h3>
+                    <p>Receive your bespoke creation, a symbol of love as unique as your relationship.</p>
+                </div>
+                <div class="timeline-progress">
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery section with interactive ring showcase -->
+    <section id="gallery" class="gallery">
+        <div class="section-content">
+            <h2 class="section-title">Inspiration Gallery</h2>
+            <div class="luxury-divider">
+                <span class="diamond-dot"></span>
+                <span class="line"></span>
+                <span class="diamond-dot"></span>
+            </div>
+            <div class="gallery-container">
+                <div class="gallery-item" data-ring-style="Classic Solitaire">
+                    <div class="gallery-image">
+                        <img src="ClassicSolitaire.jpg" alt="Classic Solitaire Engagement Ring">
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Classic Solitaire</h3>
+                        <p>Timeless elegance</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-ring-style="Halo Design">
+                    <div class="gallery-image">
+                        <img src="HaloDesign.jpg" alt="Halo Design Engagement Ring">
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Halo Design</h3>
+                        <p>Magnificent brilliance</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-ring-style="Vintage Inspired">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1611955167811-4711904bb9f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Vintage Inspired Engagement Ring">
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Vintage Inspired</h3>
+                        <p>Timeless romance</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-ring-style="Modern Minimalist">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Modern Minimalist Engagement Ring">
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Modern Minimalist</h3>
+                        <p>Sleek sophistication</p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-details">
+                <div class="detail-content">
+                    <h3 id="ring-style">Select a style to explore</h3>
+                    <p id="ring-description">Click on any image above to learn more about each unique design.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact section with form -->
+    <section id="contact" class="contact">
+        <div class="section-content">
+            <h2 class="section-title">Begin Your Bespoke Journey</h2>
+            <div class="luxury-divider">
+                <span class="diamond-dot"></span>
+                <span class="line"></span>
+                <span class="diamond-dot"></span>
+            </div>
+            <p class="contact-intro">Complete the form below, and a Diamond District specialist will reach out to you shortly.</p>
+            
+            <div class="form-container">
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" id="first-name" name="first-name" required>
+                            <label for="first-name">First Name</label>
+                            <div class="input-line"></div>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" id="last-name" name="last-name" required>
+                            <label for="last-name">Last Name</label>
+                            <div class="input-line"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">Email Address</label>
+                            <div class="input-line"></div>
+                        </div>
+                        <div class="input-group">
+                            <input type="tel" id="phone" name="phone" required>
+                            <label for="phone">Phone Number</label>
+                            <div class="input-line"></div>
+                        </div>
+                    </div>
+                    <div class="form-group full">
+                        <div class="input-group">
+                            <textarea id="vision" name="vision" rows="4" required></textarea>
+                            <label for="vision">Describe your vision</label>
+                            <div class="input-line"></div>
+                        </div>
+                    </div>
+                    <div class="form-group full">
+                        <button type="submit" class="submit-button">
+                            <span class="button-text">Submit</span>
+                            <span class="button-icon">→</span>
+                        </button>
+                    </div>
+                </form>
+                <div class="form-success" style="display: none;">
+                    <div class="success-icon">
+                        <svg viewBox="0 0 50 50" width="50" height="50">
+                            <circle cx="25" cy="25" r="20" fill="none" stroke="#d4af37" stroke-width="2" />
+                            <path d="M16,25 L22,32 L34,18" fill="none" stroke="#d4af37" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <h3>Thank You</h3>
+                    <p>We've received your inquiry and a Diamond District specialist will contact you within 24 hours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add this new section after the contact section -->
+    <section id="booking" class="booking">
+        <div class="section-content">
+            <h2 class="section-title">Schedule a Consultation</h2>
+            <div class="luxury-divider">
+                <span class="diamond-dot"></span>
+                <span class="line"></span>
+                <span class="diamond-dot"></span>
+            </div>
+            <p class="booking-intro">Ready to discuss your perfect ring in person? Book a consultation with our design specialists.</p>
+            
+            <div class="calendly-container">
+                <!-- Replace the URL below with your own Calendly link -->
+                <div class="calendly-inline-widget" data-url="https://calendly.com/akshay-jagjivan01/30min" style="min-width:320px;height:700px;"></div>
+                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for enlarged gallery images -->
+    <div class="modal" id="gallery-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-image-container">
+                <img src="" id="modal-image" alt="Enlarged ring design">
+            </div>
+            <div class="modal-details">
+                <h3 id="modal-title"></h3>
+                <p id="modal-description"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="enhanced-animations.js"></script>
+</body>
+</html>
